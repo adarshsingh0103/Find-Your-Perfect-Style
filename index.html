@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Perfect Style</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="welcome">
+        <h1>Find Your Perfect Style</h1>
+        <button onclick="showInputSection()">Get Started</button>
+    </div>
+
+    <div id="input" style="display:none;">
+        <h2>Enter Your Details</h2>
+        <form id="style-form" onsubmit="return getSuggestions()">
+            <label for="gender">Gender:</label>
+            <select id="gender" onchange="toggleSections()" required>
+                <option value="" disabled selected>Select Your Gender</option> 
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="feet">Height (Feet):</label>
+            <input type="number" id="feet" placeholder="Enter feet" required>
+            <label for="inches">Height (Inches):</label>
+            <input type="number" id="inches" placeholder="Enter inches" required>
+            
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" placeholder="Enter your weight" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" placeholder="Enter your age" required>
+            
+            <label for="skin-tone">Skin Tone:</label>
+            <select id="skin-tone" onchange="toggleSections()" required>
+                <option value="" disabled selected>Select Your skin-tone</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+
+            <div id="beard-section" style="display:none;">
+                <label for="beard">Beard Length:</label>
+                <select id="beard">
+                    <option value="short">Short</option>
+                    <option value="medium">Medium</option>
+                    <option value="long">Long</option>
+                </select>
+            </div>
+
+            <div id="hair-section" style="display:none;">
+                <label for="hair-length">Hair Length:</label>
+                <select id="hair-length">
+                    <option value="long">Long (up to waist)</option>
+                    <option value="medium">Medium (between spine)</option>
+                    <option value="short">Short (up to neck)</option>
+                </select>
+            </div>
+
+            <button type="submit">Get Suggestions</button>
+        </form>
+    </div>
+
+    <div id="results" style="display:none;">
+        <h2>Your Suggestions</h2>
+        <pre id="suggestions"></pre>
+        <button onclick="resetForm()">Start Over</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

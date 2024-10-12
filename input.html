@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Advisor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Welcome Section -->
+        <div id="welcome" class="welcome-section">
+            <h1>Find Your Perfect Style</h1>
+            <button id="get-started" class="button" onclick="showInputSection()">Get Started</button>
+        </div>
+
+        <!-- Input Section -->
+        <div id="input" class="input-section" style="display:none;">
+            <h2>Enter Your Details</h2>
+            <form id="style-form" onsubmit="return getSuggestions();">
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" onchange="toggleSections()" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="beard-section" style="display:none;">
+                    <label for="beard">Beard Length:</label>
+                    <select id="beard" required>
+                        <option value="">Select Length</option>
+                        <option value="Short Beard">Short Beard</option>
+                        <option value="Medium Beard">Medium Beard</option>
+                        <option value="Long Beard">Long Beard</option>
+                    </select>
+                </div>
+
+                <div class="form-group" id="hair-section" style="display:none;">
+                    <label for="hair-length">Hair Length:</label>
+                    <select id="hair-length" required>
+                        <option value="">Select Length</option>
+                        <option value="Long Hair">Long Hair (up to waist)</option>
+                        <option value="Medium Hair">Medium Hair (in between spine)</option>
+                        <option value="Short Hair">Short Hair (up to neck)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="feet">Height (Feet):</label>
+                    <input type="number" id="feet" placeholder="Enter height in feet" required>
+                </div>
+                <div class="form-group">
+                    <label for="inches">Height (Inches):</label>
+                    <input type="number" id="inches" placeholder="Enter height in inches" required>
+                </div>
+                <div class="form-group">
+                    <label for="weight">Weight (kg):</label>
+                    <input type="number" id="weight" placeholder="Enter weight in kg" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" placeholder="Enter your age" required>
+                </div>
+                <div class="form-group">
+                    <label for="skin-tone">Skin Tone:</label>
+                    <select id="skin-tone" required>
+                        <option value="">Select Skin Tone</option>
+                        <option value="light">Light</option>
+                        <option value="medium">Medium</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <button type="submit" id="get-suggestions" class="button rounded">Get Suggestions</button>
+            </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results" class="results-section" style="display:none;">
+            <h2>Your Suggestions</h2>
+            <p id="suggestions"></p>
+            <button class="button" onclick="resetForm()">Reset</button>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

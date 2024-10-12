@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('https://images.pexels.com/photos/28872149/pexels-photo-28872149/free-photo-of-stylish-makeup-and-fragrance-flat-lay.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    color: #fff;
+    animation: fadeInBackground 2s ease-in-out; /* Background fade-in animation */
+}
+
+/* Neon Light Effect for Headings with Bounce */
+h1, h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5),
+                 0 0 10px rgba(255, 255, 255, 0.5),
+                 0 0 20px rgba(173, 216, 230, 0.8),
+                 0 0 40px rgba(173, 216, 230, 1),
+                 0 0 80px rgba(173, 216, 230, 1);
+    animation: bounceIn 1s ease; /* Heading bounce-in animation */
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px; /* Make button rounded */
+    background-color: #6200ea;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 2s infinite; /* Pulsating animation on the button */
+}
+
+button:hover {
+    background-color: #3700b3;
+    transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInForm 1.5s ease-in-out; /* Fade-in animation for the form */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    transition: transform 0.3s ease; /* Smooth focus effect */
+}
+
+input:focus, select:focus {
+    transform: scale(1.05); /* Slightly zoom in on focus */
+}
+
+#results {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInResults 2s ease-in-out; /* Fade-in results box */
+}
+
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    animation: fadeIn 1.5s ease; /* Smooth fade-in for welcome screen */
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInForm {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInResults {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
